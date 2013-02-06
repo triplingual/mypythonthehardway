@@ -1,0 +1,36 @@
+" -- string boundary
+' -- string boundary
+# -- comment
+% -- multiple roles
+	1) modulo mathematical operator
+	2) separator between a string with tokens and the content to replace those tokens
+* -- mathematical multiplication, but can manipulate strings under certain circumstances
+() -- separator/container for arguments or parameters
+- -- subtraction
++
+= -- Assigns value on the right to the variable on the left
+def name(args):
+print
+open
+readline
+file
+"""
+/
+.
+,
+len
+int
+float
+%d
+%s
+%r
+argv -- code to handle an undefined number of arguments; can be exploded into a defined number of arguments
+import -- includes code from a module in the present script
++= -- increment and assign
+-= -- decrement and assign
+input() -- requests data from script executor, evals it; takes optional string argument establishing prompt character(s)
+raw_input() -- requests data from script executor, does not sanitize it at all; takes optional string argument establishing prompt character(s)
+> -- greater-than comparison operator
+< -- less-than comparison operator
+>= -- greater-than-or-equal-to comparison operator
+<= -- less-than-or-equal-to comparison operator

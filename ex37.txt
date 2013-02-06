@@ -1,0 +1,160 @@
+Symbol Review (and learning)
+
+
+*************
+Keywords (re-ordered from Zed's list to group related terms)
+*************
+
+and - Boolean comparison; note order of evaluation (from Pydoc): "The expression ``x and y`` first evaluates *x*; if *x* is false, its value is returned; otherwise, *y* is evaluated and the resulting value is returned."
+
+or - Boolean comparison; note order of evaluation (from Pydoc): "The expression ``x or y`` first evaluates *x*; if *x* is true, its value is returned; otherwise, *y* is evaluated and the resulting value is returned."
+
+not - Boolean negation operator
+
+del - deletes contents of a target list *recursively*
+
+while - loop until condition is true
+
+for - first keyword of an iterator
+
+break - appears in body of for or while loops
+
+global - instantiates a global variable (global to script and where it's included); gets tricky with exec statements and eval() function
+
+with - invokes a context manager (what's that?) before executing a statement block; benefits include "allow[ing] common ``try``...``except``...``finally`` usage patterns to be encapsulated for convenient reuse."
+
+assert - debugging expression, only executed if a debugging context (if I have that notion correct) is active.
+
+if - conditional
+
+elif - Python's way of writing 'else if'
+
+else - fallthrough for if control block; usable in if blocks as well as try blocks
+
+pass - null placeholder for use when building code and you don't know what will go in a function definition but you do know that you want a particular function or kind of function; probably very useful for TDD; not the same as an empty return because flow continues after the pass statement; see also http://stackoverflow.com/questions/7872611/in-python-what-is-the-difference-between-pass-and-return
+
+yield - used in the body of a generator function definition; (what's a generator function?)
+
+import - primary keyword to include Python modules or specific pieces of them
+
+from - secondary keyword for importing specific pieces of Python modules
+
+as - tertiary keyword for importing Python modules or specific pieces of them
+
+print - echo to screen or other output
+
+class - keyword for defining a Python class
+
+exec - [not clear at all what this does; I can see that it executes code, but it's not obvious to me why or when you would use it]
+
+in - indicates where to look for preceding variable; part of iterator
+
+continue - skips to the next cycle of a for or while loop
+
+try - start of a control block containing statements with expectation of occasional failure
+
+except - Python word for 'catch'; used in try . . . except . . . finally blocks; try block can contain multiple except clauses
+
+finally - cleanup handler for try block
+
+raise - throws an exception
+
+is - test for object identity (NOT equality)
+
+return - send value back to calling statement
+
+def - keyword indicating that a function definition is to follow
+
+lambda - shorthand for creating anonymous functions; lambda arguments: expression is the same as def name( arguments ): return expression [properly indented, of course]
+
+*************
+Data Types
+*************
+
+True - constant
+
+False - constant
+
+None - constant representing null
+
+strings - concatenated collections of characters that can be manipulated in certain ways and not in others
+
+numbers - 1, 0, 1000000000035; figure that is a round integer; range unknown
+
+floats - figure that includes a decimal point; does not have to have non-zero values in the fractional places; 53 bits of precision (there's also a decimal module if greater precision is needed), range unknown; 10.0, 3.141579, 22/7
+
+lists - collections of data types, including tuples and lists
+
+
+*************
+String Escape Sequences
+*************
+
+\\	Allows a slash
+\'	Allows a single quote
+\"	Allows a double quote
+\a	ASCII bell character (calls a simple sound from the OS)
+\b	ASCII backspace; not sure why I would use this except in some textual deformation
+\f	ASCII form feed; functionally, seems to just add a newline, but technically I think it is a page break
+\n	ASCII line feed; adds new line between appearance of character
+\r	ASCII carriage return
+\t	Tab
+\v	ASCII vertical tab; drops down to the next line and continues
+
+
+*************
+String Formats
+*************
+
+%d	signed integer decimal (rounds, but be careful of precision flaws)
+%i	signed integer decimal (rounds, but be careful of precision flaws)
+%o	unsigned octal; inserts leading 0 if not exists
+%u	unsigned decimal (rounds)
+%x	unsigned hex (lowercase); inserts leading 0x if leading character not already 0
+%X	unsigned hex (uppercase); inserts leading 0X if leading character not already 0
+%e	floating point exponential format (lowercase)
+%E	floating point exponential format (uppercase)
+%f	floating point decimal
+%F	floating point decimal
+%g	Floating point format. Uses exponential format if exponent is greater than -4 or less than precision, decimal format otherwise.
+%G	Floating point format. Uses exponential format if exponent is greater than -4 or less than precision, decimal format otherwise.
+%c	single character
+%r	Converts to sting using repr(); inter alia, will include demarcating quotes in the result as if they were part of the string
+%s	Formats as a string using str()
+%%	Allows insertion of percentage symbol, but it seems like you can't use it in isolation, needs some other formatted item before it
+
+
+*************
+Operators
+*************
+
++	Addition, concatenation
+-	Subtraction only
+*	Multiplication
+**	Exponent
+/	Division
+//	"Floor Division - The division of operands where the result is the quotient in which the digits after the decimal point are removed." (from http://www.tutorialspoint.com/python/python_basic_operators.htm); a/k/a division in which the result is the closest whole number
+%	Modulo
+<	Less than
+>	Greater than
+<=	Less than or equal to
+>=	Greater than or equal to
+==	Equality test
+!=	Not equal to
+<>	Greater than or less than; strongly similar to !=
+( )	Tuple designator; tuples cannot be edited
+[ ]	List designator; NB: a list can be converted to a set, which has different properties than a list
+{ }	Dictionary designator
+@	
+,	Separator for items in a list or key-value pairs in a dictionary
+:	Declares the start of an indented block; separates a key from its value in a dictionary
+.	Delimiter for class methods; NB: not concatenation
+=	Assignment
+;	Separates statements to permit multiple on one line
++=	Unary addition+assignment; a/k/a increment
+-=	Unary subtraction+assignment; a/k/a decrement
+*=	Unary multiplication+assignment
+/=	Unary division+assignment
+//=	Unary floor division+assignment
+%=	Unary modulo+assignment
+**=	Unary exponent+assignment

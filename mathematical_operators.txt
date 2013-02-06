@@ -1,0 +1,9 @@
++   plus    addition
+-   minus   subtraction
+/   slash   division
+*   asterisk    multiplication
+%   percent modulo
+<   less-than   comparison
+>   greater-than    comparison
+<=  less-than-equal comparison
+>=  greater-than-equal  comparison
